@@ -8,7 +8,7 @@
 import Foundation
 
 /// Parameters for creating a new article
-struct ArticleCreate: Codable, Sendable {
+public struct ArticleCreate: Codable, Sendable {
     let document: Data
     let metadata: ArticleMetadata?
     let isPreview: Bool?

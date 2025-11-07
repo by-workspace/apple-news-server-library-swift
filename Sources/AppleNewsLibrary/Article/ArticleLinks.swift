@@ -5,7 +5,7 @@
 //  Created by Axel Martinez on 5/11/25.
 //
 
-struct ArticleLinks: Codable, Sendable {
+public struct ArticleLinks: Codable, Sendable {
     let `self`: String
     let channel: String
     let sections: [String]

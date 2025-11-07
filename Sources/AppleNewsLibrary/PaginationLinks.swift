@@ -8,7 +8,7 @@
 import Foundation
 
 /// Links for navigating paginated results
-struct PaginationLinks: Codable, Sendable {
+public struct PaginationLinks: Codable, Sendable {
     let `self`: String
     let next: String?
     let prev: String?

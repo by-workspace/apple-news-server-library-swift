@@ -8,7 +8,7 @@
 import Foundation
 
 /// Response containing multiple sections
-struct SectionsResponse {
+public struct SectionsResponse {
     let data: [Section]
     let meta: ResponseMeta?
 }

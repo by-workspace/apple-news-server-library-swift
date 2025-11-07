@@ -8,7 +8,7 @@
 import Foundation
  
 /// Response containing multiple channels
-struct ChannelsResponse: Codable, Sendable {
+public struct ChannelsResponse: Codable, Sendable {
     let data: [Channel]
     let meta: ResponseMeta?
 }

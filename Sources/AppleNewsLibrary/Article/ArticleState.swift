@@ -8,7 +8,7 @@
 import Foundation
 
 /// Request to change an article's state
-struct ArticleStateChange: Codable, Sendable {
+public struct ArticleStateChange: Codable, Sendable {
     let state: Article.State
     
     init(state: Article.State) {

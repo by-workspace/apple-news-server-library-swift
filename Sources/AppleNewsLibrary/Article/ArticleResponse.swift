@@ -8,7 +8,7 @@
 import Foundation
 
 /// Response containing multiple articles
-struct ArticlesResponse: Codable, Sendable {
+public struct ArticlesResponse: Codable, Sendable {
     let data: [Article]
     let meta: ResponseMeta?
 }

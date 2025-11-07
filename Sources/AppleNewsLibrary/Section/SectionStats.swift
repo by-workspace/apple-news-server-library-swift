@@ -8,7 +8,7 @@
 import Foundation
 
 /// Statistics about a section's articles
-struct SectionStats: Codable, Sendable {
+public struct SectionStats: Codable, Sendable {
     let totalArticles: Int
     let liveArticles: Int
     let draftArticles: Int

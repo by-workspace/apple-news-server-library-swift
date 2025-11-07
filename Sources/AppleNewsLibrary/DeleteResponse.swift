@@ -8,7 +8,7 @@
 import Foundation
 
 /// Response for delete operations
-struct DeleteResponse: Codable, Sendable {
+public struct DeleteResponse: Codable, Sendable {
     let success: Bool
     let message: String?
     

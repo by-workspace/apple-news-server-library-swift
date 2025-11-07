@@ -8,7 +8,7 @@
 import Foundation
 
 /// Credentials for authenticating with Apple News API
-struct Credentials: Codable, Sendable {
+public struct Credentials: Codable, Sendable {
     let apiKeyId: String
     let apiSecret: String
     

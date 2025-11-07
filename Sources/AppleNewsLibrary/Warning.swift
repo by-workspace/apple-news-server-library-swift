@@ -6,7 +6,7 @@
 //
 
 /// An individual API error
-struct Warning: Codable, Sendable {
+public struct Warning: Codable, Sendable {
     let code: String
     let keyPath: String?
     let value: String?

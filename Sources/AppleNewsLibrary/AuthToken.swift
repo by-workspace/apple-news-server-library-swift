@@ -8,7 +8,7 @@
 import Foundation
 
 /// Authentication token for Apple News API
-struct AuthToken: Codable, Sendable {
+public struct AuthToken: Codable, Sendable {
     let accessToken: String
     let tokenType: String
     let expiresIn: Int

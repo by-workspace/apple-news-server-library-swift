@@ -8,7 +8,7 @@
 import Foundation
 
 /// Parameters for updating a channel
-struct ChannelUpdate: Codable, Sendable {
+public struct ChannelUpdate: Codable, Sendable {
     let name: String?
     let website: String?
     let defaultSectionId: String?
