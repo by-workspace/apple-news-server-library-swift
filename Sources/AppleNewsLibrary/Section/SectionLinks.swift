@@ -1,0 +1,19 @@
+//
+//  SectionLinks.swift
+//  AppleNewsLibrary
+//
+//  Created by Axel Martinez on 5/11/25.
+//
+
+import Foundation
+
+/// Links related to a section resource
+struct SectionLinks: Codable, Sendable {
+    let `self`: String
+    let channel: String
+    
+    init(sectionId: String, channelId: String) {
+        self.`self` = "/sections/\(sectionId)"
+        self.channel = "/channels/\(channelId)"
+    }
+}
