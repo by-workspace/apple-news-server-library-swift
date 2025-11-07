@@ -8,7 +8,7 @@
 import Foundation
 
 /// Links related to a channel resource
-struct ChannelLinks: Codable, Sendable {
+public struct ChannelLinks: Codable, Sendable {
     let `self`: String
     let defaultSection: String?
     

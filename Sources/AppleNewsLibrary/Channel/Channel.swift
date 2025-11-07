@@ -8,7 +8,7 @@
 import Foundation
 
 /// A channel resource represents a publisher's channel
-struct Channel: Codable, Sendable {
+public struct Channel: Codable, Sendable {
     let id: String
     let type: String = "channel"
     let createdAt: Date

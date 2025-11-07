@@ -8,7 +8,7 @@
 import Foundation
 
 /// Parameters for updating a section
-struct SectionUpdate: Codable, Sendable {
+public struct SectionUpdate: Codable, Sendable {
     let name: String?
     let isDefault: Bool?
     

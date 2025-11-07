@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Article: Codable {
+public struct Article: Sendable, Codable {
     let id: String
     let type: String = "article"
     let createdAt: Date

@@ -8,7 +8,7 @@
 import Foundation
 
 /// Metrics and analytics data for a channel
-struct ChannelMetrics {
+public struct ChannelMetrics {
     let channelId: String
     let totalArticles: Int
     let liveArticles: Int

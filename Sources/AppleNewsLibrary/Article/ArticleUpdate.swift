@@ -8,7 +8,7 @@
 import Foundation
  
 /// Parameters for updating an article
-struct ArticleUpdate: Codable, Sendable {
+public struct ArticleUpdate: Codable, Sendable {
     let revision: String?
     let document: Data?
     let metadata: ArticleMetadata?

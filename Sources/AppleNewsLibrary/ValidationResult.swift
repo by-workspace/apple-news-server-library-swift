@@ -8,7 +8,7 @@
 import Foundation
 
 /// Result of validating an article document
-struct ValidationResult {
+public struct ValidationResult {
     let isValid: Bool
     let warnings: [ArticleIssue]?
     let errors: [ArticleIssue]?

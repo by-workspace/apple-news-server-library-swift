@@ -8,13 +8,13 @@
 import Foundation
 
 /// A search result containing articles matching the query
-struct SearchResult: Codable, Sendable {
+public struct SearchResult: Codable, Sendable {
     let data: [Article]
     let meta: SearchMeta
 }
 
 /// Metadata about search results
-struct SearchMeta: Codable, Sendable {
+public struct SearchMeta: Codable, Sendable {
     let total: Int
     
     init(total: Int) {

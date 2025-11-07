@@ -8,7 +8,7 @@
 import Foundation
 
 /// Theme settings for a channel
-struct ChannelTheme: Codable, Sendable {
+public struct ChannelTheme: Codable, Sendable {
     let headerColor: String?
     let accentColor: String?
     let logoImageURL: String?

@@ -8,7 +8,7 @@
 import Foundation
 
 /// Metrics and analytics data for an article
-struct ArticleMetrics {
+public struct ArticleMetrics {
     let articleId: String
     let impressions: Int
     let engagements: Int
@@ -27,7 +27,7 @@ struct ArticleMetrics {
 }
 
 /// Time period for metrics
-struct MetricsPeriod: Codable, Sendable {
+public struct MetricsPeriod: Codable, Sendable {
     let startDate: Date
     let endDate: Date
     

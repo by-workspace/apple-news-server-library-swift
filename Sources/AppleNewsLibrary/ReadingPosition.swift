@@ -8,7 +8,7 @@
 import Foundation
 
 /// Represents a user's reading position in an article
-struct ReadingPosition {
+public struct ReadingPosition {
     let articleId: String
     let position: Int
     let modifiedAt: Date

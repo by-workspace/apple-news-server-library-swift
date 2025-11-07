@@ -8,7 +8,7 @@
 import Foundation
 
 /// Parameters for creating a new section
-struct SectionCreate: Codable, Sendable {
+public struct SectionCreate: Codable, Sendable {
     let name: String
     let isDefault: Bool?
     

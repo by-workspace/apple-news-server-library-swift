@@ -8,7 +8,7 @@
 import Foundation
 
 /// An asset resource represents a file uploaded to Apple News
-struct Asset {
+public struct Asset {
     let id: String
     let type: String = "asset"
     let size: Int

@@ -8,7 +8,7 @@
 import Foundation
 
 /// Issues (warnings or errors) related to an article
-struct ArticleIssues {
+public struct ArticleIssues {
     let warnings: [ArticleIssue]?
     let errors: [ArticleIssue]?
     
@@ -19,7 +19,7 @@ struct ArticleIssues {
 }
 
 /// An individual issue with an article
-struct ArticleIssue: Codable, Sendable {
+public struct ArticleIssue: Codable, Sendable {
     let code: String
     let componentIdentifier: String?
     let message: String?

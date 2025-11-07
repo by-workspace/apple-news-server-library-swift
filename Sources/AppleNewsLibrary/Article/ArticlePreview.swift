@@ -8,7 +8,7 @@
 import Foundation
 
 /// A preview URL for an article before it's published
-struct ArticlePreview {
+public struct ArticlePreview {
     let previewURL: String
     let expiresAt: Date
     
