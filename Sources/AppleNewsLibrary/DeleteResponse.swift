@@ -9,10 +9,10 @@ import Foundation
 
 /// Response for delete operations
 public struct DeleteResponse: Codable, Sendable {
-    let success: Bool
-    let message: String?
+    public let success: Bool
+    public let message: String?
     
-    init(success: Bool, message: String? = nil) {
+    public init(success: Bool, message: String? = nil) {
         self.success = success
         self.message = message
     }

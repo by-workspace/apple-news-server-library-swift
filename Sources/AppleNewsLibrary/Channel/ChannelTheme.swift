@@ -9,9 +9,9 @@ import Foundation
 
 /// Theme settings for a channel
 public struct ChannelTheme: Codable, Sendable {
-    let headerColor: String?
-    let accentColor: String?
-    let logoImageURL: String?
+    public let headerColor: String?
+    public let accentColor: String?
+    public let logoImageURL: String?
     
     enum CodingKeys: String, CodingKey {
         case headerColor
@@ -19,7 +19,7 @@ public struct ChannelTheme: Codable, Sendable {
         case logoImageURL = "logoImageUrl"
     }
     
-    init(headerColor: String? = nil, accentColor: String? = nil, logoImageURL: String? = nil) {
+    public init(headerColor: String? = nil, accentColor: String? = nil, logoImageURL: String? = nil) {
         self.headerColor = headerColor
         self.accentColor = accentColor
         self.logoImageURL = logoImageURL

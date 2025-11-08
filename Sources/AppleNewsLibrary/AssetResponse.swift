@@ -9,10 +9,10 @@ import Foundation
 
 /// Response containing multiple assets
 public struct AssetsResponse: Sendable, Codable {
-    let data: [Asset]
-    let meta: ResponseMeta?
+    public let data: [Asset]
+    public let meta: ResponseMeta?
 }
 
 public struct ResponseMeta: Sendable, Codable {
-    let totalCount: Int
+    public let totalCount: Int
 }

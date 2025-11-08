@@ -9,11 +9,11 @@ import Foundation
 
 /// Statistics about a section's articles
 public struct SectionStats: Codable, Sendable {
-    let totalArticles: Int
-    let liveArticles: Int
-    let draftArticles: Int
+    public let totalArticles: Int
+    public  let liveArticles: Int
+    public let draftArticles: Int
     
-    init(totalArticles: Int, liveArticles: Int, draftArticles: Int) {
+    public init(totalArticles: Int, liveArticles: Int, draftArticles: Int) {
         self.totalArticles = totalArticles
         self.liveArticles = liveArticles
         self.draftArticles = draftArticles

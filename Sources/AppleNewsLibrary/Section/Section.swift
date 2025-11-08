@@ -9,10 +9,10 @@ import Foundation
 
 /// A section resource represents a section in a channel
 public struct Section: Codable, Sendable {
-    let id: String
-    let createdAt: Date
-    let modifiedAt: Date
-    let name: String
-    let isDefault: Bool
-    let links: SectionLinks
+    public let id: String
+    public let createdAt: Date
+    public let modifiedAt: Date
+    public let name: String
+    public let isDefault: Bool
+    public let links: SectionLinks
 }

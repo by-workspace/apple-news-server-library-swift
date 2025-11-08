@@ -9,10 +9,10 @@ import Foundation
 
 /// Links related to a section resource
 public struct SectionLinks: Codable, Sendable {
-    let `self`: String
-    let channel: String
+    public let `self`: String
+    public let channel: String
     
-    init(sectionId: String, channelId: String) {
+    public init(sectionId: String, channelId: String) {
         self.`self` = "/sections/\(sectionId)"
         self.channel = "/channels/\(channelId)"
     }

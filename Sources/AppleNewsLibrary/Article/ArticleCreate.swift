@@ -9,17 +9,17 @@ import Foundation
 
 /// Parameters for creating a new article
 public struct ArticleCreate: Codable, Sendable {
-    let document: Data
-    let metadata: ArticleMetadata?
-    let isPreview: Bool?
-    let isSponsored: Bool?
-    let isHidden: Bool?
-    let isCandidateToBeFeatured: Bool?
-    let maturityRating: Article.MaturityRating?
-    let accessLevel: Article.AccessLevel?
-    let links: ArticleUpdateLinks?
+    public let document: Data
+    public let metadata: ArticleMetadata?
+    public  let isPreview: Bool?
+    public let isSponsored: Bool?
+    public let isHidden: Bool?
+    public let isCandidateToBeFeatured: Bool?
+    public let maturityRating: Article.MaturityRating?
+    public let accessLevel: Article.AccessLevel?
+    public let links: ArticleUpdateLinks?
     
-    init(
+    public init(
         document: Data,
         metadata: ArticleMetadata? = nil,
         isPreview: Bool? = nil,

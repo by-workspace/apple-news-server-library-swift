@@ -9,9 +9,9 @@ import Foundation
 
 /// Represents a user's reading position in an article
 public struct ReadingPosition: Sendable, Codable {
-    let articleId: String
-    let position: Int
-    let modifiedAt: Date
+    public let articleId: String
+    public let position: Int
+    public let modifiedAt: Date
     
     enum CodingKeys: String, CodingKey {
         case articleId
@@ -19,7 +19,7 @@ public struct ReadingPosition: Sendable, Codable {
         case modifiedAt
     }
     
-    init(articleId: String, position: Int, modifiedAt: Date) {
+    public init(articleId: String, position: Int, modifiedAt: Date) {
         self.articleId = articleId
         self.position = position
         self.modifiedAt = modifiedAt

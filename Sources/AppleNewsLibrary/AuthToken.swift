@@ -9,10 +9,10 @@ import Foundation
 
 /// Authentication token for Apple News API
 public struct AuthToken: Codable, Sendable {
-    let accessToken: String
-    let tokenType: String
-    let expiresIn: Int
-    let scope: String?
+    public let accessToken: String
+    public let tokenType: String
+    public let expiresIn: Int
+    public let scope: String?
     
     enum CodingKeys: String, CodingKey {
         case accessToken = "access_token"
@@ -21,7 +21,7 @@ public struct AuthToken: Codable, Sendable {
         case scope
     }
     
-    init(accessToken: String, tokenType: String = "Bearer", expiresIn: Int, scope: String? = nil) {
+    public init(accessToken: String, tokenType: String = "Bearer", expiresIn: Int, scope: String? = nil) {
         self.accessToken = accessToken
         self.tokenType = tokenType
         self.expiresIn = expiresIn

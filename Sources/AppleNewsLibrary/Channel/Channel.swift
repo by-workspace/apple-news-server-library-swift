@@ -9,15 +9,15 @@ import Foundation
 
 /// A channel resource represents a publisher's channel
 public struct Channel: Codable, Sendable {
-    let id: String
-    let type: String = "channel"
-    let createdAt: Date
-    let modifiedAt: Date
-    let name: String
-    let website: String?
-    let defaultSectionId: String?
-    let shareUrl: String?
-    let links: ChannelLinks
+    public let id: String
+    public let type: String = "channel"
+    public let createdAt: Date
+    public let modifiedAt: Date
+    public let name: String
+    public let website: String?
+    public let defaultSectionId: String?
+    public let shareUrl: String?
+    public let links: ChannelLinks
     
     enum CodingKeys: String, CodingKey {
         case id
