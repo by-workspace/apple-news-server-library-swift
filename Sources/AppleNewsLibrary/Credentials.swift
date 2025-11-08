@@ -9,10 +9,10 @@ import Foundation
 
 /// Credentials for authenticating with Apple News API
 public struct Credentials: Codable, Sendable {
-    let apiKeyId: String
-    let apiSecret: String
+    public let apiKeyId: String
+    public let apiSecret: String
     
-    init(apiKeyId: String, apiSecret: String) {
+    public init(apiKeyId: String, apiSecret: String) {
         self.apiKeyId = apiKeyId
         self.apiSecret = apiSecret
     }

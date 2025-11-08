@@ -9,12 +9,12 @@ import Foundation
 
 /// Metrics and analytics data for an article
 public struct ArticleMetrics {
-    let articleId: String
-    let impressions: Int
-    let engagements: Int
-    let completions: Int
-    let averageReadTime: Double?
-    let period: MetricsPeriod
+    public let articleId: String
+    public let impressions: Int
+    public let engagements: Int
+    public let completions: Int
+    public let averageReadTime: Double?
+    public let period: MetricsPeriod
     
     enum CodingKeys: String, CodingKey {
         case articleId
@@ -25,15 +25,3 @@ public struct ArticleMetrics {
         case period
     }
 }
-
-/// Time period for metrics
-public struct MetricsPeriod: Codable, Sendable {
-    let startDate: Date
-    let endDate: Date
-    
-    init(startDate: Date, endDate: Date) {
-        self.startDate = startDate
-        self.endDate = endDate
-    }
-}
-

@@ -9,9 +9,9 @@ import Foundation
 
 /// Request to change an article's state
 public struct ArticleStateChange: Codable, Sendable {
-    let state: Article.State
+    public let state: Article.State
     
-    init(state: Article.State) {
+    public init(state: Article.State) {
         self.state = state
     }
 }
