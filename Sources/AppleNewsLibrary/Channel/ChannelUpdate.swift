@@ -9,10 +9,10 @@ import Foundation
 
 /// Parameters for updating a channel
 public struct ChannelUpdate: Codable, Sendable {
-    let name: String?
-    let website: String?
-    let defaultSectionId: String?
-    let theme: ChannelTheme?
+    public let name: String?
+    public let website: String?
+    public let defaultSectionId: String?
+    public let theme: ChannelTheme?
     
     enum CodingKeys: String, CodingKey {
         case name
@@ -21,7 +21,7 @@ public struct ChannelUpdate: Codable, Sendable {
         case theme
     }
     
-    init(
+    public init(
         name: String? = nil,
         website: String? = nil,
         defaultSectionId: String? = nil,

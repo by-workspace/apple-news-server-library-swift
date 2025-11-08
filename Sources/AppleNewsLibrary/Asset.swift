@@ -9,11 +9,11 @@ import Foundation
 
 /// An asset resource represents a file uploaded to Apple News
 public struct Asset: Codable, Sendable {
-    let id: String
-    let type: String = "asset"
-    let size: Int
-    let contentType: String
-    let links: AssetLinks
+    public let id: String
+    public let type: String = "asset"
+    public let size: Int
+    public let contentType: String
+    public let links: AssetLinks
     
     enum CodingKeys: String, CodingKey {
         case id

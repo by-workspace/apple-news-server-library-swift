@@ -9,9 +9,9 @@ import Foundation
 
 /// Error response from Apple News API
 public struct ErrorResponse: Codable, Sendable, Swift.Error {
-    let errors: [Error]
+    public let errors: [Error]
     
-    init(errors: [Error]) {
+    public init(errors: [Error]) {
         self.errors = errors
     }
 }

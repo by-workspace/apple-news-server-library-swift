@@ -8,9 +8,9 @@
 import Foundation
 
 /// Links related to an asset
-struct AssetLinks: Codable, Sendable {
-    let `self`: String
-    let article: String
+public struct AssetLinks: Codable, Sendable {
+    public let `self`: String
+    public let article: String
     
     init(assetId: String, articleId: String) {
         self.`self` = "/assets/\(assetId)"

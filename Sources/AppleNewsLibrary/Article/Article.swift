@@ -8,48 +8,46 @@
 import Foundation
 
 public struct Article: Sendable, Codable {
-    let id: String
-    let type: String = "article"
-    let createdAt: Date
-    let modifiedAt: Date
-    let shareURL: String
-    let revision: String
-    let document: Data
+    public let id: String
+    public let type: String = "article"
+    public let createdAt: Date
+    public let modifiedAt: Date
+    public let shareURL: String
+    public let revision: String
+    public let document: Data
+    public let state: State
+    public let accessLevel: AccessLevel?
+    public let maturityRating: MaturityRating?
+    public let isSponsored: Bool
+    public let isPreview: Bool
+    public let isHidden: Bool
+    public let isCandidateToBeFeatured: Bool
+    public let isPaid: Bool
+    public let links: ArticleLinks
+    
+    // Metadata
+    public let title: String
+    public let excerpt: String?
     
     /// The state of an article
-    enum State: String, Codable, Sendable {
+    public enum State: String, Codable, Sendable {
         case live = "LIVE"
         case draft = "DRAFT"
         case takedown = "TAKEDOWN"
     }
     
     /// Article access level
-    enum AccessLevel: String, Codable, Sendable {
+    public enum AccessLevel: String, Codable, Sendable {
         case `public` = "PUBLIC"
         case protected = "PROTECTED"
     }
     
     /// Article maturity rating
-    enum MaturityRating: String, Codable, Sendable {
+    public enum MaturityRating: String, Codable, Sendable {
         case general = "GENERAL"
         case mature = "MATURE"
         case kids = "KIDS"
     }
-    
-    let state: State
-    let accessLevel: AccessLevel?
-    let maturityRating: MaturityRating?
-    let isSponsored: Bool
-    let isPreview: Bool
-    let isHidden: Bool
-    let isCandidateToBeFeatured: Bool
-    let isPaid: Bool
-    let links: ArticleLinks
-    
-    // Metadata
-    let title: String
-    let excerpt: String?
-    
    
     enum CodingKeys: String, CodingKey {
         case id

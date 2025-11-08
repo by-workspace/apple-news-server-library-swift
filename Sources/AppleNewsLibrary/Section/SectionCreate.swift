@@ -9,10 +9,10 @@ import Foundation
 
 /// Parameters for creating a new section
 public struct SectionCreate: Codable, Sendable {
-    let name: String
-    let isDefault: Bool?
+    public let name: String
+    public let isDefault: Bool?
     
-    init(name: String, isDefault: Bool? = nil) {
+    public init(name: String, isDefault: Bool? = nil) {
         self.name = name
         self.isDefault = isDefault
     }

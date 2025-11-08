@@ -9,11 +9,11 @@ import Foundation
 
 /// Links for navigating paginated results
 public struct PaginationLinks: Codable, Sendable {
-    let `self`: String
-    let next: String?
-    let prev: String?
+    public let `self`: String
+    public let next: String?
+    public let prev: String?
     
-    init(selfLink: String, next: String? = nil, prev: String? = nil) {
+    public  init(selfLink: String, next: String? = nil, prev: String? = nil) {
         self.`self` = selfLink
         self.next = next
         self.prev = prev

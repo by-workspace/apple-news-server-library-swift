@@ -7,11 +7,11 @@
 
 /// An individual API error
 public struct Error: Codable, Sendable {
-    let code: String
-    let keyPath: String?
-    let value: String?
+    public let code: String
+    public let keyPath: String?
+    public let value: String?
     
-    init(code: String, keyPath: String? = nil, value: String? = nil) {
+    public init(code: String, keyPath: String? = nil, value: String? = nil) {
         self.code = code
         self.keyPath = keyPath
         self.value = value

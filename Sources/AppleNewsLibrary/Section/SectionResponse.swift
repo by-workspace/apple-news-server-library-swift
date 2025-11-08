@@ -9,6 +9,6 @@ import Foundation
 
 /// Response containing multiple sections
 public struct SectionsResponse {
-    let data: [Section]
-    let meta: ResponseMeta?
+    public let data: [Section]
+    public let meta: ResponseMeta?
 }

@@ -9,11 +9,11 @@ import Foundation
 
 /// Result of validating an article document
 public struct ValidationResult: Codable, Sendable {
-    let isValid: Bool
-    let warnings: [ArticleIssue]?
-    let errors: [ArticleIssue]?
+    public let isValid: Bool
+    public let warnings: [ArticleIssue]?
+    public  let errors: [ArticleIssue]?
     
-    init(isValid: Bool, warnings: [ArticleIssue]? = nil, errors: [ArticleIssue]? = nil) {
+    public init(isValid: Bool, warnings: [ArticleIssue]? = nil, errors: [ArticleIssue]? = nil) {
         self.isValid = isValid
         self.warnings = warnings
         self.errors = errors

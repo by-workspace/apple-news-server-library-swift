@@ -9,6 +9,6 @@ import Foundation
  
 /// Response containing multiple channels
 public struct ChannelsResponse: Codable, Sendable {
-    let data: [Channel]
-    let meta: ResponseMeta?
+    public let data: [Channel]
+    public let meta: ResponseMeta?
 }

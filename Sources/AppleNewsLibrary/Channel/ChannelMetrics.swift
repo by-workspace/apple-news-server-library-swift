@@ -9,13 +9,13 @@ import Foundation
 
 /// Metrics and analytics data for a channel
 public struct ChannelMetrics: Codable, Sendable {
-    let channelId: String
-    let totalArticles: Int
-    let liveArticles: Int
-    let draftArticles: Int
-    let totalImpressions: Int
-    let totalEngagements: Int
-    let period: MetricsPeriod
+    public let channelId: String
+    public let totalArticles: Int
+    public let liveArticles: Int
+    public let draftArticles: Int
+    public let totalImpressions: Int
+    public  let totalEngagements: Int
+    public let period: MetricsPeriod
     
     enum CodingKeys: String, CodingKey {
         case channelId 
