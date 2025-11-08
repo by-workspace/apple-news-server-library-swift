@@ -6,11 +6,11 @@
 //
 
 public struct ArticleLinks: Codable, Sendable {
-    let `self`: String
-    let channel: String
-    let sections: [String]
+    public let `self`: String
+    public let channel: String
+    public let sections: [String]
     
-    init(articleId: String, channelId: String, sectionIds: [String] = []) {
+    public init(articleId: String, channelId: String, sectionIds: [String] = []) {
         self.`self` = "/articles/\(articleId)"
         self.channel = "/channels/\(channelId)"
         self.sections = sectionIds.map { "/sections/\($0)" }

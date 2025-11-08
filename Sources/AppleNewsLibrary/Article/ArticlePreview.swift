@@ -9,15 +9,15 @@ import Foundation
 
 /// A preview URL for an article before it's published
 public struct ArticlePreview {
-    let previewURL: String
-    let expiresAt: Date
+    public let previewURL: String
+    public let expiresAt: Date
     
     enum CodingKeys: String, CodingKey {
         case previewURL = "previewUrl"
         case expiresAt
     }
     
-    init(previewURL: String, expiresAt: Date) {
+    public init(previewURL: String, expiresAt: Date) {
         self.previewURL = previewURL
         self.expiresAt = expiresAt
     }
