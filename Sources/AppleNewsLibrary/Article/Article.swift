@@ -19,6 +19,7 @@ public struct Article: Sendable, Codable {
     public let state: State
     public let accessLevel: AccessLevel?
     public let maturityRating: MaturityRating?
+    public let links: ArticleLinksResponse
     public let isSponsored: Bool
     public let isPreview: Bool
     public let isHidden: Bool
@@ -57,6 +58,7 @@ public struct Article: Sendable, Codable {
         case state
         case accessLevel
         case maturityRating
+        case links
         case isSponsored
         case isPreview
         case isHidden
@@ -75,6 +77,7 @@ public struct Article: Sendable, Codable {
         state: State,
         accessLevel: AccessLevel?,
         maturityRating: MaturityRating?,
+        links: ArticleLinksResponse,
         isSponsored: Bool,
         isPreview: Bool,
         isHidden: Bool,
@@ -91,12 +94,12 @@ public struct Article: Sendable, Codable {
         self.state = state
         self.accessLevel = accessLevel
         self.maturityRating = maturityRating
+        self.links = links
         self.isSponsored = isSponsored
         self.isPreview = isPreview
         self.isHidden = isHidden
         self.isCandidateToBeFeatured = isCandidateToBeFeatured
         self.isPaid = isPaid
-
     }
     
     public init(from decoder: any Decoder) throws {
@@ -111,6 +114,7 @@ public struct Article: Sendable, Codable {
         self.state = try container.decode(Article.State.self, forKey: .state)
         self.accessLevel = try container.decodeIfPresent(Article.AccessLevel.self, forKey: .accessLevel)
         self.maturityRating = try container.decodeIfPresent(Article.MaturityRating.self, forKey: .maturityRating)
+        self.links = try container.decode(ArticleLinksResponse.self, forKey: .links)
         self.isSponsored = try container.decode(Bool.self, forKey: .isSponsored)
         self.isPreview = try container.decode(Bool.self, forKey: .isPreview)
         self.isHidden = try container.decode(Bool.self, forKey: .isHidden)
@@ -132,6 +136,7 @@ public struct Article: Sendable, Codable {
         try container.encode(self.state, forKey: .state)
         try container.encodeIfPresent(self.accessLevel, forKey: .accessLevel)
         try container.encodeIfPresent(self.maturityRating, forKey: .maturityRating)
+        try container.encode(self.links, forKey: .links)
         try container.encode(self.isSponsored, forKey: .isSponsored)
         try container.encode(self.isPreview, forKey: .isPreview)
         try container.encode(self.isHidden, forKey: .isHidden)
