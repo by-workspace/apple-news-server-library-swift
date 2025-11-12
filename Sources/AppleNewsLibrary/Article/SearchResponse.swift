@@ -10,7 +10,7 @@ import Foundation
 /// A search result containing articles matching the query
 public struct SearchResponse: Codable, Sendable {
     public let articles: [Article]
-    public let links: ArticleLinksResponse?
+    public let links: SearchResponseLinks?
     public let meta: SearchMeta
     
     enum CodingKeys: CodingKey {
@@ -19,7 +19,7 @@ public struct SearchResponse: Codable, Sendable {
         case meta
     }
     
-    public init(data: [Article], links: ArticleLinksResponse? = nil, meta: SearchMeta) {
+    public init(data: [Article], links: SearchResponseLinks? = nil, meta: SearchMeta) {
         self.articles = data
         self.links = links
         self.meta = meta
@@ -29,7 +29,7 @@ public struct SearchResponse: Codable, Sendable {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
         self.articles = try container.decode([Article].self, forKey: .data)
-        self.links = try container.decodeIfPresent(ArticleLinksResponse.self, forKey: .links)
+        self.links = try container.decodeIfPresent(SearchResponseLinks.self, forKey: .links)
         self.meta = try container.decode(SearchMeta.self, forKey: .meta)
     }
     
