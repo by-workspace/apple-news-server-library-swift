@@ -9,6 +9,7 @@ import Foundation
 
 public struct Article: Sendable, Codable {
     public let id: String
+    public let title: String
     public let type: String = "article"
     public let createdAt: Date
     public let modifiedAt: Date
@@ -18,16 +19,13 @@ public struct Article: Sendable, Codable {
     public let state: State
     public let accessLevel: AccessLevel?
     public let maturityRating: MaturityRating?
+    public let links: ArticleLinksResponse
     public let isSponsored: Bool
     public let isPreview: Bool
     public let isHidden: Bool
     public let isCandidateToBeFeatured: Bool
     public let isPaid: Bool
-    
-    // Metadata
-    public let title: String
-    public let excerpt: String?
-    
+
     /// The state of an article
     public enum State: String, Codable, Sendable {
         case live = "LIVE"
@@ -50,6 +48,7 @@ public struct Article: Sendable, Codable {
    
     enum CodingKeys: String, CodingKey {
         case id
+        case title
         case type
         case createdAt
         case modifiedAt
@@ -59,17 +58,17 @@ public struct Article: Sendable, Codable {
         case state
         case accessLevel
         case maturityRating
+        case links
         case isSponsored
         case isPreview
         case isHidden
         case isCandidateToBeFeatured
         case isPaid
-        case title
-        case excerpt
     }
     
     public init(
         id: String,
+        title: String,
         createdAt: Date,
         modifiedAt: Date,
         shareURL: String,
@@ -78,15 +77,15 @@ public struct Article: Sendable, Codable {
         state: State,
         accessLevel: AccessLevel?,
         maturityRating: MaturityRating?,
+        links: ArticleLinksResponse,
         isSponsored: Bool,
         isPreview: Bool,
         isHidden: Bool,
         isCandidateToBeFeatured: Bool,
-        isPaid: Bool,
-        title: String,
-        excerpt: String?
+        isPaid: Bool
     ) {
         self.id = id
+        self.title = title
         self.createdAt = createdAt
         self.modifiedAt = modifiedAt
         self.shareURL = shareURL
@@ -95,17 +94,17 @@ public struct Article: Sendable, Codable {
         self.state = state
         self.accessLevel = accessLevel
         self.maturityRating = maturityRating
+        self.links = links
         self.isSponsored = isSponsored
         self.isPreview = isPreview
         self.isHidden = isHidden
         self.isCandidateToBeFeatured = isCandidateToBeFeatured
         self.isPaid = isPaid
-        self.title = title
-        self.excerpt = excerpt
     }
     
     public init(from decoder: any Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
+        
         self.id = try container.decode(String.self, forKey: .id)
         self.createdAt = try container.decode(Date.self, forKey: .createdAt)
         self.modifiedAt = try container.decode(Date.self, forKey: .modifiedAt)
@@ -115,13 +114,13 @@ public struct Article: Sendable, Codable {
         self.state = try container.decode(Article.State.self, forKey: .state)
         self.accessLevel = try container.decodeIfPresent(Article.AccessLevel.self, forKey: .accessLevel)
         self.maturityRating = try container.decodeIfPresent(Article.MaturityRating.self, forKey: .maturityRating)
+        self.links = try container.decode(ArticleLinksResponse.self, forKey: .links)
         self.isSponsored = try container.decode(Bool.self, forKey: .isSponsored)
         self.isPreview = try container.decode(Bool.self, forKey: .isPreview)
         self.isHidden = try container.decode(Bool.self, forKey: .isHidden)
         self.isCandidateToBeFeatured = try container.decode(Bool.self, forKey: .isCandidateToBeFeatured)
         self.isPaid = try container.decode(Bool.self, forKey: .isPaid)
         self.title = try container.decode(String.self, forKey: .title)
-        self.excerpt = try container.decodeIfPresent(String.self, forKey: .excerpt)
     }
     
     public func encode(to encoder: any Encoder) throws {
@@ -137,12 +136,12 @@ public struct Article: Sendable, Codable {
         try container.encode(self.state, forKey: .state)
         try container.encodeIfPresent(self.accessLevel, forKey: .accessLevel)
         try container.encodeIfPresent(self.maturityRating, forKey: .maturityRating)
+        try container.encode(self.links, forKey: .links)
         try container.encode(self.isSponsored, forKey: .isSponsored)
         try container.encode(self.isPreview, forKey: .isPreview)
         try container.encode(self.isHidden, forKey: .isHidden)
         try container.encode(self.isCandidateToBeFeatured, forKey: .isCandidateToBeFeatured)
         try container.encode(self.isPaid, forKey: .isPaid)
         try container.encode(self.title, forKey: .title)
-        try container.encodeIfPresent(self.excerpt, forKey: .excerpt)
     }
 }
